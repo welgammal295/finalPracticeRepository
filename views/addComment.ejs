@@ -1,0 +1,35 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+        <h1>Add Comment</h1>
+        <br>
+    </header>
+
+    <main>
+        <h1>Adding Comments</h1><br>
+        <h4><%= comicComment[0].comicTitle %></h4>
+        <img src="<%=comicComment[0].comicUrl%>" alt="image"><br>
+      
+    <form method="POST" action="/add-comment">
+        <input type="hidden" name="comicId" value="<%=comicComment[0].comicId%>">
+        <div>Username:
+        <input type="text"name ="username" placeholder="Enter Username" required></div><br>
+        <div>Email Address:
+        <input type="text"name ="emailAdd" placeholder="Enter email address" required></div><br>
+
+        Comment:
+        <textarea name="commentText" placeholder="Enter comment" required></textarea><br><br>
+        <button class="btn btn-success"> Submit Comment </button></div>
+
+    </form>
+
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<%- include('partials/footer.ejs') %>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>

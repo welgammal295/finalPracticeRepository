@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+        <h1>Add Comic</h1>
+        <br>
+    </header>
+
+    <main>
+        <h1>New Comic</h1><br>
+        <form method="POST" action="/comic/new">
+            <input type="hidden" name="comicSiteId" value="<%=websites[0].comicSiteId%>">
+           <div>Title:
+            <input type="text" name ="comicTitle" placeholder="Enter Comic Title" required></div><br>
+            <div>URL:
+            <input type="text"  name ="url" placeholder="Enter Comic URL" required></div><br>
+            <div>Publish Date:
+            <input type="date" name = "comicDate" required></div><br>
+     
+                <div>
+                <label for="comicSiteName" class="form-label">Web Site:</label>
+                <select name="comicSiteName">
+                    <% for (comicSiteName of websites) { %>
+                      <option value="<%= comicSiteName.comicSiteName %>">
+                        <%= comicSiteName.comicSiteName %>
+                      </option>
+                    <% } %>
+                  </select></div><br>
+            <div>   
+            <button class="btn btn-success"> Submit New Comic </button></div>
+
+        </form>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/scripts.js"></script>
+  </body>
+
+</html>

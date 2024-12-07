@@ -1,0 +1,50 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+        <h1>Comic Page</h1>
+        <br>
+    </header>
+
+    <main>
+
+        <h1><%= comicName %></h1>
+  
+        <% for (let i = 0; i < comicbyname.length; i++) { %>
+
+            <div>
+                <h6><%= comicbyname[i].comicTitle %></h6>
+                <img src="<%= comicbyname[i].comicUrl %>" alt="Comic Image" />
+            </div>
+            <a href="/add-comment/?comicId=<%= comicbyname[i].comicId %>" class="add-comment">[Add Comment]</a>
+            <a href="#" class="view-comments" id="<%= comicbyname[i].comicId %>">[View Comments]</a>
+            <br>
+            <br>
+        <% } %>
+        
+    </main>
+
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >Comments</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="commentInfo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

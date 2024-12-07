@@ -1,0 +1,43 @@
+
+<%- include('partials/head.ejs') %>
+
+<body>
+    
+    <header>
+        <h1>Home Page</h1>
+        <br>
+    </header>
+    <h1>My Favorite Comics</h1><br>
+    <main>
+        <form action="/comic/new">
+            <button class="btn btn-primary"> Add Comic </button>
+        </form><br>
+        <% for (let i = 0; i < comics.length; i++) { %>
+            <a href="/comicInfo?comicName=<%= comics[i].comicSiteName %>">
+            <%= comics[i].comicSiteName %> </a> <br>
+            <a
+            href="<%= comics[i].comicSiteUrl%>"><%= comics[i].comicSiteUrl%></a><br>
+          <% } %><br>
+
+
+            <!--  Here we add a place for the image id pointing to js-->
+            <img id="comic-image" src="<%= image.comicUrl %>" alt="Random Comic"><br>
+            <!--  Here we add a place for the name  id pointing to js-->
+            <h4 id="comic-name"><%= image.comicSiteName %></h4>
+     
+              
+            <div><button id="random" class="btn btn-success"> Display Random Comic </button> </div><br>
+    
+    
+    
+    
+        </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>
