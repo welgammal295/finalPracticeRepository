@@ -5,7 +5,6 @@ for (commentLink of commentLinks) {
 }
 function newImage(event) {
     event.preventDefault(); // Prevent any default action if necessary
-    alert('New image logic triggered!');
     // Your logic here, such as dynamically fetching an image or other action
   }
 
