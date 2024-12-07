@@ -44,3 +44,6 @@ body {
   .modal-content {
     background-color: #0B0C10; 
 }
+table {
+  margin: auto;
+}

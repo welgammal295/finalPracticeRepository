@@ -3,7 +3,15 @@ let commentLinks = document.querySelectorAll("a.view-comments");
 for (commentLink of commentLinks) {
     commentLink.addEventListener("click", getComment);
 }
-document.querySelector("#random").addEventListener("click", newImage);
+function newImage(event) {
+    event.preventDefault(); // Prevent any default action if necessary
+    alert('New image logic triggered!');
+    // Your logic here, such as dynamically fetching an image or other action
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector("#random").addEventListener("click", newImage);
+  });
 
 
 // Good API exmple passing an image and name to HTML
